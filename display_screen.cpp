@@ -24,9 +24,6 @@ void DisplayScreen::appendScreen(const QString& output)
 
     if (current == "0")
     {
-        if (output == "00")
-            return;
-
         current = output;
     }
     else
@@ -35,5 +32,10 @@ void DisplayScreen::appendScreen(const QString& output)
     }
 
     textDisplay->setText(current);
+}
+
+std::string DisplayScreen::getTextDisplay() const
+{
+    return textDisplay->text().toStdString();
 }
 
