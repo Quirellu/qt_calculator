@@ -20,6 +20,12 @@ Numpad::Numpad(QWidget* parent) : QWidget(parent)
 
 void Numpad::processButtonText(const QAbstractButton *button)
 {
-    emit sendText(button->text());
-}
+    if (button->text() == "=")
+    {
+        emit executeCalculation();
+    }else
+    {
+        emit sendText(button->text());
+    }
 
+}

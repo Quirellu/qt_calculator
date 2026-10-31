@@ -27,11 +27,12 @@ private:
         "7", "8", "9",
         "4", "5", "6",
         "1", "2", "3",
-        "0", "00", ".",
+        "0", ".", "=",
     };
 
 signals:
     void sendText(const QString& output);
+    void executeCalculation();
 
 private slots:
     void processButtonText(const QAbstractButton *button);
