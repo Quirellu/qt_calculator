@@ -6,6 +6,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+include(FetchContent)
 
 find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
 
@@ -13,12 +14,37 @@ add_executable(qt_calculator main.cpp
         main.cpp
         display_screen.cpp
         display_screen.h
+        Numpad.h
+        numpad.cpp
+        calculator.h
+        calculator.cpp
+        operator_pad.h
+        operator_pad.cpp
+        CalculationEngine.h
+        CalculationEngine.cpp
+        token.h
 )
 target_link_libraries(qt_calculator
         Qt::Core
         Qt::Gui
         Qt::Widgets
 )
+
+FetchContent_Declare(
+        Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+        GIT_TAG v3.16.1
+)
+
+FetchContent_MakeAvailable(Catch2)
+
+add_executable(tests test.cpp
+        CalculationEngine.h
+        CalculationEngine.cpp
+        token.h)
+
+target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+
 
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(DEBUG_SUFFIX)
