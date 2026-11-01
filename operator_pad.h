@@ -24,7 +24,7 @@ private:
 
     const std::array<QString, 4> inputs
     {
-        "/", "x", "-", "+"
+        "/", "*", "-", "+"
     };
 
 signals:
