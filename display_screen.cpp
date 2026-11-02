@@ -24,10 +24,7 @@ void DisplayScreen::appendScreen(const QString& output)
 {
     QString current = textDisplay->text();
 
-    bool isDouble;
-    output.toDouble(&isDouble);
-
-    if (isScreenOverwritable && isDouble)
+    if (isScreenOverwritable)
     {
         current = output;
         isScreenOverwritable = false;
