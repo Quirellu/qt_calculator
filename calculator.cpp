@@ -42,6 +42,10 @@ void Calculator::calculateAndUpdateScreen()
     {
         this->display->updateScreen(QString::fromStdString(e.what()));
         previousAnswer = 0;
+    }catch (const std::invalid_argument &e)
+    {
+        this->display->updateScreen(QString("Invalid Arguement"));
+        previousAnswer = 0;
     }
 
     this->display->set_is_screen_overwritable(true);

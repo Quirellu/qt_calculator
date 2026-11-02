@@ -136,8 +136,11 @@ double CalculationEngine::evaluatePostfix(const std::vector<Token>& tokens)
         }
 
     }
+    if (numberStack.size() != 1)
+    {
+        throw std::runtime_error("Error: Invalid expression");
+    }
 
-    assert(numberStack.size() == 1);
     return numberStack.top();
 }
 
