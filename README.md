@@ -4,9 +4,9 @@ A desktop calculator application built with **Qt6** and **C++20**, featuring a c
 
 ## Main Purpose
 
-This project serves as a learning exercise to primarily gain exposure to the Qt framework. The calculator is composed of QT widgets and uses C++ for its calculations.
+This project serves as a learning exercise to primarily gain exposure to the Qt framework. As such, it may have some unhandled edge cases related with its parsing logic.
 
-As such, it may have some unhandled edge cases related with how it parses the expressions.
+The calculator is composed of QT widgets and uses C++ for its calculations.
 
 Currently, the inputs are click-only.
 
