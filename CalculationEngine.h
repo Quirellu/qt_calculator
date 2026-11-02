@@ -7,7 +7,6 @@
 #include <map>
 #include <string>
 #include <vector>
-#include <vector>
 
 #include "token.h"
 
@@ -32,7 +31,6 @@ private:
     double evaluatePostfix(const std::vector<Token>& tokens);
     Operators resolveOperatorString(std::string_view operatorString);
 
-    std::array<std::string, 4> operatorArray {"+", "-", "*", "/"};
     std::map<std::string, uint8_t> operatorPrecedence{{"*", 1} , {"/", 1}, {"+", 0}, {"-",0}};
 
 

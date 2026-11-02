@@ -23,6 +23,12 @@ public slots:
 
 private:
     QLineEdit* textDisplay;
+    bool isScreenOverwritable;
+
+public:
+    void set_is_screen_overwritable(bool is_screen_overwritable);
+
+private:
     QVBoxLayout* layout;
 };
 

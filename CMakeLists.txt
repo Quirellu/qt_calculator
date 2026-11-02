@@ -11,7 +11,6 @@ include(FetchContent)
 find_package(Qt6 COMPONENTS Core Gui Widgets REQUIRED)
 
 add_executable(qt_calculator main.cpp
-        main.cpp
         display_screen.cpp
         display_screen.h
         Numpad.h

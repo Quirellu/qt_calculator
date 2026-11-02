@@ -10,6 +10,10 @@
 
 double CalculationEngine::calculate(std::string_view expression)
 {
+    if (expression.empty())
+    {
+        return 0;
+    }
     return evaluatePostfix(parseExpression(tokenize(expression))) ;
 }
 

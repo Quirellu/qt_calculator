@@ -20,6 +20,8 @@ private:
     QVBoxLayout* layout;
     QHBoxLayout* keyboard_layout;
 
+    double previousAnswer;
+
     void calculateAndUpdateScreen();
 };
 

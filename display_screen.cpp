@@ -11,6 +11,8 @@ DisplayScreen::DisplayScreen(QWidget* parent) : QWidget(parent)
     textDisplay->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     layout->addWidget(textDisplay);
+
+    isScreenOverwritable = true;
 }
 
 void DisplayScreen::updateScreen(const QString& output)
@@ -22,7 +24,10 @@ void DisplayScreen::appendScreen(const QString& output)
 {
     QString current = textDisplay->text();
 
-    if (current == "0")
+    bool isDouble;
+    output.toDouble(&isDouble);
+
+    if (isScreenOverwritable && isDouble)
     {
         current = output;
     }
@@ -32,12 +37,14 @@ void DisplayScreen::appendScreen(const QString& output)
     }
 
     textDisplay->setText(current);
+    isScreenOverwritable = false;
 }
 
 void DisplayScreen::resetScreen()
 {
     textDisplay->clear();
     textDisplay->setText("0");
+    isScreenOverwritable = true;
 }
 
 void DisplayScreen::backspace()
@@ -48,5 +55,10 @@ void DisplayScreen::backspace()
 std::string DisplayScreen::getTextDisplay() const
 {
     return textDisplay->text().toStdString();
+}
+
+void DisplayScreen::set_is_screen_overwritable(const bool is_screen_overwritable)
+{
+    isScreenOverwritable = is_screen_overwritable;
 }
 

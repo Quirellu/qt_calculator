@@ -1,8 +1,6 @@
 
 #include "calculator.h"
 
-#include <iostream>
-
 Calculator::Calculator(QWidget* parent) : QWidget(parent)
 {
     layout = new QVBoxLayout(this);
@@ -36,12 +34,17 @@ void Calculator::calculateAndUpdateScreen()
 {
     try
     {
-    const auto answer = std::to_string(this->engine.calculate(display->getTextDisplay()));
-        this->display->updateScreen(QString::fromStdString(answer));
+        const auto answer = this->engine.calculate(display->getTextDisplay());
+
+        this->display->updateScreen(QString::number(answer));
+        previousAnswer = answer;
     }catch (const std::runtime_error &e)
     {
         this->display->updateScreen(QString::fromStdString(e.what()));
+        previousAnswer = 0;
     }
+
+    this->display->set_is_screen_overwritable(true);
 
 }
 
