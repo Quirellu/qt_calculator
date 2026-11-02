@@ -1,6 +1,6 @@
 # Qt Calculator
 
-A desktop calculator application built with **Qt6** and **C++20**, featuring a graphical interface and a fully testable calculation engine.
+A desktop calculator application built with **Qt6** and **C++20**, featuring a clickable graphical interface.
 
 ## Main Purpose
 
