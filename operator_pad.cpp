@@ -23,7 +23,11 @@ void OperatorPad::processButtonText(const QAbstractButton *button)
 {   if (button->text() == "CLR")
     {
         emit sendResetSignal();
-    }else
+    }else if (button->text() == "<-")
+    {
+        emit sendBackspaceSignal();
+    }
+    else
     {
         emit sendText(button->text());
     }

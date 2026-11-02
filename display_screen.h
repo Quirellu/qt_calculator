@@ -17,7 +17,10 @@ public slots:
     void updateScreen(const QString& output);
     void appendScreen(const QString& output);
     void resetScreen();
+    void backspace();
+
     [[nodiscard]] std::string getTextDisplay() const;
+
 private:
     QLineEdit* textDisplay;
     QVBoxLayout* layout;

@@ -36,7 +36,13 @@ void DisplayScreen::appendScreen(const QString& output)
 
 void DisplayScreen::resetScreen()
 {
+    textDisplay->clear();
     textDisplay->setText("0");
+}
+
+void DisplayScreen::backspace()
+{
+    textDisplay->backspace();
 }
 
 std::string DisplayScreen::getTextDisplay() const

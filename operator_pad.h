@@ -31,7 +31,7 @@ private:
 signals:
     void sendText(const QString& output);
     void sendResetSignal();
-
+    void sendBackspaceSignal();
 
 private slots:
     void processButtonText(const QAbstractButton *button);
