@@ -34,6 +34,11 @@ void DisplayScreen::appendScreen(const QString& output)
     textDisplay->setText(current);
 }
 
+void DisplayScreen::resetScreen()
+{
+    textDisplay->setText("0");
+}
+
 std::string DisplayScreen::getTextDisplay() const
 {
     return textDisplay->text().toStdString();

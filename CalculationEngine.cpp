@@ -104,7 +104,7 @@ double CalculationEngine::evaluatePostfix(const std::vector<Token>& tokens)
         {
             if (numberStack.size() < 2)
             {
-                throw std::runtime_error("Error evaluating postfix notation. Potential invalid expresion");
+                throw std::runtime_error("Error evaluating postfix notation. Potential invalid expression");
             }
 
             const auto val2 = numberStack.top();
@@ -132,11 +132,9 @@ double CalculationEngine::evaluatePostfix(const std::vector<Token>& tokens)
         }
 
     }
+
     assert(numberStack.size() == 1);
-
     return numberStack.top();
-
-
 }
 
 Operators CalculationEngine::resolveOperatorString(const std::string_view operatorString)

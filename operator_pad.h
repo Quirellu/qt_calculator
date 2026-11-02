@@ -20,15 +20,17 @@ private:
     QButtonGroup* buttonGroup;
 
     uint8_t row_count = 4;
-    uint8_t col_count = 1;
+    uint8_t col_count = 2;
 
-    const std::array<QString, 4> inputs
+    const std::array<QString, 6> inputs
     {
-        "/", "*", "-", "+"
+        "/", "*", "-", "+",
+        "<-", "CLR",
     };
 
 signals:
     void sendText(const QString& output);
+    void sendResetSignal();
 
 
 private slots:

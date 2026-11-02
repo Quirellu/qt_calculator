@@ -13,13 +13,18 @@ OperatorPad::OperatorPad(QWidget* parent) : QWidget(parent)
         auto *button = new QPushButton(this->inputs[i]);
         buttonGroup->addButton(button, i);
 
-        gridLayout->addWidget(button, i/col_count, i%col_count);
+        gridLayout->addWidget(button, i%row_count, i/row_count);
     }
 
     connect(buttonGroup, &QButtonGroup::buttonPressed, this, &OperatorPad::processButtonText);
 }
 
 void OperatorPad::processButtonText(const QAbstractButton *button)
-{
+{   if (button->text() == "CLR")
+    {
+        emit sendResetSignal();
+    }else
+    {
         emit sendText(button->text());
+    }
 }

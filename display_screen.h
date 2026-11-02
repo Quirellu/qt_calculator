@@ -16,6 +16,7 @@ public:
 public slots:
     void updateScreen(const QString& output);
     void appendScreen(const QString& output);
+    void resetScreen();
     [[nodiscard]] std::string getTextDisplay() const;
 private:
     QLineEdit* textDisplay;
