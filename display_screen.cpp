@@ -30,6 +30,7 @@ void DisplayScreen::appendScreen(const QString& output)
     if (isScreenOverwritable && isDouble)
     {
         current = output;
+        isScreenOverwritable = false;
     }
     else
     {
@@ -37,7 +38,6 @@ void DisplayScreen::appendScreen(const QString& output)
     }
 
     textDisplay->setText(current);
-    isScreenOverwritable = false;
 }
 
 void DisplayScreen::resetScreen()
