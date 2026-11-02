@@ -5,7 +5,7 @@ Calculator::Calculator(QWidget* parent) : QWidget(parent)
 {
     layout = new QVBoxLayout(this);
 
-    keyboard_layout = new QHBoxLayout(this);
+    keyboard_layout = new QHBoxLayout();
 
     display = new DisplayScreen(this);
     numpad = new Numpad(this);
