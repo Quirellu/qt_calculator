@@ -44,7 +44,7 @@ void Calculator::calculateAndUpdateScreen()
         previousAnswer = 0;
     }catch (const std::invalid_argument &e)
     {
-        this->display->updateScreen(QString("Invalid Arguement"));
+        this->display->updateScreen(QString("Invalid Argument"));
         previousAnswer = 0;
     }
 
