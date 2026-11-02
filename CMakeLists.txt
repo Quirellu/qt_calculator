@@ -37,13 +37,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(tests test.cpp
-        CalculationEngine.h
-        CalculationEngine.cpp
-        token.h)
-
-target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
-
+add_subdirectory(tests)
 
 if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
     set(DEBUG_SUFFIX)
